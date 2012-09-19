@@ -1,0 +1,65 @@
+values(t(begin), [unpaired(single),push]).
+
+values(t(single,_), [unpaired(single),push,end]).
+
+values(t(push,_), [push,unpaired(lbulge),unpaired(loop),pull]).
+
+values(t(loop,_), [unpaired(loop),pull]).
+
+values(t(pull,_), [pull,unpaired(rbulge),unpaired(bifurcation)]).
+
+values(t(pullout), [unpaired(single),end]).
+
+values(t(lbulge,_), [unpaired(lbulge),push]).
+
+values(t(rbulge,_), [unpaired(rbulge),pull]).
+
+values(t(bifurcation,_), [unpaired(bifurcation),push]).
+
+values(e(push,_), [(a,u),(c,g),(g,c),(u,a),(g,u),(u,g)]).
+
+values(e(_,_), [a,c,g,u]).
+
+data('../../data/rfam95.90.30.canon.50.tab.part.not.3.dat').
+
+model(A) :-
+        msw(t(begin), B),
+        r(B, b, [], A).
+
+r(end, _, _, []).
+
+r(unpaired(A), B, C, [D|E]) :-
+        msw(e(unpaired,B), D),
+        can_empty_stack(C, E),
+        msw(t(A,(B,D)), F),
+        r(F, D, C, E).
+
+r(push, A, B, [C|D]) :-
+        msw(e(push,A), (C,E)),
+        can_empty_stack([E|B], D),
+        msw(t(push,(A,C,E)), F),
+        r(F, (C,E), [E|B], D).
+
+r(pull, A, [], B) :-
+        msw(t(pullout), C),
+        r(C, A, [], B).
+
+r(pull, A, B, [C|D]) :-
+        get_stack(B, C, E),
+        msw(t(pull,(A,C)), F),
+        r(F, C, E, D).
+
+get_stack([A|B], A, B).
+
+:- table can_empty_stack/2.
+
+can_empty_stack([], _).
+
+can_empty_stack([A|B], [A|C]) :-
+        can_empty_stack(B, C).
+
+can_empty_stack([A|B], [C|D]) :-
+        A\=C,
+        can_empty_stack([A|B], D).
+
+

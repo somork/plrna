@@ -1,0 +1,71 @@
+% rnahmm.psm
+% S/ren M/rk
+% 2012-09-06
+
+% unlimited version of rnahmm_full_lim_sg_bp_bif.psm
+% with canonical bp only (and wobble)
+% with spelled out states for bulges and bifurcations
+% annotation version: both sequence and dot-bracket structure
+% for autoAnnot running
+
+% transition probs from lim:
+values(t(begin),[unpaired(single),push]).
+values(t(single),[unpaired(single),push,end]).
+values(t(push),[push,unpaired(lbulge),unpaired(loop),pull]).
+%values(t(pushout),[unpaired(loop),pull]).
+values(t(loop),[unpaired(loop),pull]).
+values(t(pull),[pull,unpaired(rbulge),unpaired(bifurcation)]).
+values(t(pullout),[unpaired(single),end]).
+
+values(t(lbulge),[unpaired(lbulge),push]).
+values(t(rbulge),[unpaired(rbulge),pull]).
+values(t(bifurcation),[unpaired(bifurcation),push]).
+
+% Emission probabilities:
+values(e(push),[(a,u),(c,g),(g,c),(u,a),(g,u),(u,g)]).
+
+values(e(_),[a,c,g,u]).
+
+data('../../data/rfam95.90.30.canon.50.tab.part.not.x.dat').
+
+model(Seq,--Dot_bracket):-
+	msw(t(begin),NS),
+	r(NS,[],Seq,--Dot_bracket).
+
+r(end,_,[],--[]).
+
+r(unpaired(X),Stack,[W|R1],--[':'|R2]):-
+	msw(e(unpaired),W),
+        can_empty_stack(Stack,R1),
+        msw(t(X),NS),
+	r(NS,Stack,R1,--R2).
+
+r(push,Tail,[W|R1],--['<'|R2]):-
+	msw(e(push),(W,S)),
+        can_empty_stack([S|Tail],R1),
+        msw(t(push),NS),
+	r(NS,[S|Tail],R1,--R2).
+
+r(pull,[],R1,--R2):-
+	msw(t(pullout),NS), 
+        r(NS,[],R1,--R2).
+
+r(pull,Stack,[Head|R1],--['>'|R2]):-
+	get_stack(Stack,Head,Tail),
+        msw(t(pull),NS),
+	r(NS,Tail,R1,--R2).
+
+get_stack([Head|Tail],Head,Tail).
+
+:- table(can_empty_stack/2).
+
+can_empty_stack([],_).
+
+can_empty_stack([X|Xs],[X|Ys]) :-
+        can_empty_stack(Xs,Ys).
+
+can_empty_stack([X|Xs],[Y|Ys]) :-
+        X \= Y,
+        can_empty_stack([X|Xs],Ys).
+
+

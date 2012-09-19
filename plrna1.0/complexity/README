@@ -1,0 +1,11 @@
+
+
+# run:
+../scripts/complexity.sh
+
+../scripts/complexity_tables.sh 
+
+
+and you are done!
+
+

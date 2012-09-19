@@ -1,0 +1,11 @@
+switch(t(single),unfixed,[unpaired(single),push,end],[8.774493117496198e-01,6.041713269610109e-02,6.213355555427901e-02]).
+switch(t(rbulge),unfixed,[unpaired(rbulge),pull],[6.054139727421088e-01,3.945860272578912e-01]).
+switch(t(push),unfixed,[push,unpaired(lbulge),unpaired(loop),pull],[7.770338131904921e-01,6.093069969869434e-02,1.620354871108135e-01,0.000000000000000e+00]).
+switch(t(pullout),unfixed,[unpaired(single),end],[8.757049839788141e-01,1.242950160211859e-01]).
+switch(t(pull),unfixed,[pull,unpaired(rbulge),unpaired(bifurcation)],[9.102819567017756e-01,7.437791562616969e-02,1.534012767205470e-02]).
+switch(t(loop),unfixed,[unpaired(loop),pull],[8.691891891891892e-01,1.308108108108108e-01]).
+switch(t(lbulge),unfixed,[unpaired(lbulge),push],[3.259259259259260e-01,6.740740740740740e-01]).
+switch(t(bifurcation),unfixed,[unpaired(bifurcation),push],[8.764365800708440e-01,1.235634199291560e-01]).
+switch(t(begin),unfixed,[unpaired(single),push],[5.966386554621849e-01,4.033613445378151e-01]).
+switch(e(unpaired),unfixed,[a,c,g,u],[2.824107234216723e-01,2.191752788294282e-01,2.752481326102522e-01,2.231658651386473e-01]).
+switch(e(push),unfixed,[(a,u),(c,g),(g,c),(u,a),(g,u),(u,g)],[1.014395714763977e-01,3.401406093069970e-01,2.962838968865082e-01,1.858051556745899e-01,4.151322397053901e-02,3.481754268496819e-02]).

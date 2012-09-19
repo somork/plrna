@@ -1,0 +1,43 @@
+
+
+######## RNAfold
+cat ../raw_data/rfam95.90.30.canon.50.tab.part.1 | python ../scripts/tab2fasta.py > rfam95.90.30.canon.50.tab.part.1.fasta 
+cat ../raw_data/rfam95.90.30.canon.50.tab.part.2 | python ../scripts/tab2fasta.py > rfam95.90.30.canon.50.tab.part.2.fasta 
+cat ../raw_data/rfam95.90.30.canon.50.tab.part.3 | python ../scripts/tab2fasta.py > rfam95.90.30.canon.50.tab.part.3.fasta 
+cat ../raw_data/rfam95.90.30.canon.50.tab.part.4 | python ../scripts/tab2fasta.py > rfam95.90.30.canon.50.tab.part.4.fasta 
+cat ../raw_data/rfam95.90.30.canon.50.tab.part.5 | python ../scripts/tab2fasta.py > rfam95.90.30.canon.50.tab.part.5.fasta 
+
+
+(cat rfam95.90.30.canon.50.tab.part.1.fasta | RNAfold > rfam95.90.30.canon.50.tab.part.1.fold &) 
+(cat rfam95.90.30.canon.50.tab.part.2.fasta | RNAfold > rfam95.90.30.canon.50.tab.part.2.fold &) 
+(cat rfam95.90.30.canon.50.tab.part.3.fasta | RNAfold > rfam95.90.30.canon.50.tab.part.3.fold &) 
+(cat rfam95.90.30.canon.50.tab.part.4.fasta | RNAfold > rfam95.90.30.canon.50.tab.part.4.fold &) 
+(cat rfam95.90.30.canon.50.tab.part.5.fasta | RNAfold > rfam95.90.30.canon.50.tab.part.5.fold &) 
+
+
+
+(cat rfam95.90.30.canon.50.tab.part.1.fold | python ../scripts/rnafold2tab.py > rfam95.90.30.canon.50.tab.part.1.fold.tab &)
+(cat rfam95.90.30.canon.50.tab.part.2.fold | python ../scripts/rnafold2tab.py > rfam95.90.30.canon.50.tab.part.2.fold.tab &)
+(cat rfam95.90.30.canon.50.tab.part.3.fold | python ../scripts/rnafold2tab.py > rfam95.90.30.canon.50.tab.part.3.fold.tab &)
+(cat rfam95.90.30.canon.50.tab.part.4.fold | python ../scripts/rnafold2tab.py > rfam95.90.30.canon.50.tab.part.4.fold.tab &)
+(cat rfam95.90.30.canon.50.tab.part.5.fold | python ../scripts/rnafold2tab.py > rfam95.90.30.canon.50.tab.part.5.fold.tab &)
+
+
+cat rfam95.90.30.canon.50.tab.part.1.fold.tab rfam95.90.30.canon.50.tab.part.2.fold.tab rfam95.90.30.canon.50.tab.part.3.fold.tab rfam95.90.30.canon.50.tab.part.4.fold.tab rfam95.90.30.canon.50.tab.part.5.fold.tab > rfam95.90.30.canon.50.tab.part.5.fold.all
+
+
+cat rfam95.90.30.canon.50.tab.part.5.fold.all | python ../scripts/namepred.py ../raw_data/rfam95.90.30.canon.50.tab.part.all > rfam95.90.30.canon.50.tab.part.all.fold.tab.named
+
+
+###structcc: 
+[from ../scripts:]
+
+./structureCC -f=../rnafold/rfam95.90.30.canon.50.tab.part.all.fold.tab.named ../raw_data/rfam95.90.30.canon.50.tab.part.all > ../rnafold/rfam95.90.30.canon.50.tab.part.all.fold.tab.mcc
+
+cat rfam95.90.30.canon.50.tab.part.all.fold.tab.mcc | python ../scripts/mcc_av_clust.py > rfam95.90.30.canon.50.tab.part.all.fold.tab.mcc.av.clust
+
+cat rfam95.90.30.canon.50.tab.part.all.fold.tab.mcc.av.clust | python ../scripts/tab2table.py > ../tables/rnafold.canon.50.fold.tab.mcc.av.clust.table 
+
+
+
+

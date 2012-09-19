@@ -1,0 +1,30 @@
+
+# run the following commands:
+
+
+(./train.sh rnascfg 1 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.1.lst | ./decode.sh rnascfg 1 &)
+
+(./train.sh rnascfg 2 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.2.lst | ./decode.sh rnascfg 2 &)
+
+(./train.sh rnascfg 3 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.3.lst | ./decode.sh rnascfg 3 &)
+
+(./train.sh rnascfg 4 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.4.lst | ./decode.sh rnascfg 4 &)
+
+(./train.sh rnascfg 5 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.5.lst | ./decode.sh rnascfg 5 &)
+
+(cat ../../random_seqs/random_seqs_all.lst | ./decode.sh rnascfg random &)
+
+
+go to ../../dedoded/rnascfg and do:
+../../scripts/parsescfg.sh [to tabs...]
+
+
+
+
+
+

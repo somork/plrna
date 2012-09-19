@@ -1,0 +1,23 @@
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm),restore_sw,S=[u,u,u,u,a,g,g,c,u,u,c,a,c,u,a,g,a,a,g,c,c,a,c,c,a,a,c,g,u,u,u,a,c,u,u,c,g,g,a,c,g,u,c,a,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 5.16
+	System time (seconds): 0.35
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4812960
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 112181
+	Voluntary context switches: 66
+	Involuntary context switches: 569
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

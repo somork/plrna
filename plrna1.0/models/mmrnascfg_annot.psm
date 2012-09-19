@@ -1,0 +1,97 @@
+% mmrnascfg_annot.psm
+% S/ren M/rk 
+% full rna scfg model...
+% mixed memory
+
+%:-['default'].
+data('../../data/rfam95.90.30.canon.50.tab.part.not.x.dat').
+
+
+% parameters: 
+values(transition(free,_),[[a,free],[c,free],[g,free],[u,free],[free,free],[stem],[a],[c],[g],[u]]).
+values(transition(stem,_),[
+			[al,stem,ur],
+			[cl,stem,gr],
+			[gl,stem,cr],
+			[ul,stem,ar],
+			[gl,stem,ur],
+			[ul,stem,gr],
+			[stem,stem],		
+		
+			[al,stem,rb,ur],
+			[cl,stem,rb,gr],
+			[gl,stem,rb,cr],
+			[ul,stem,rb,ar],
+			[gl,stem,rb,ur],
+			[ul,stem,rb,gr],
+			
+			[al,lb,stem,ur],	
+			[cl,lb,stem,gr],	
+			[gl,lb,stem,cr],	
+			[ul,lb,stem,ar],	
+			[gl,lb,stem,ur],	
+			[ul,lb,stem,gr],	
+
+			[loop]
+			]).
+
+values(transition(loop,_),[[a,loop],[c,loop],[g,loop],[u,loop],[stem,loop],[a],[c],[g],[u]]).
+values(transition(lb,_),[[a,lb],[c,lb],[g,lb],[u,lb],[a],[c],[g],[u]]).
+values(transition(rb,_),[[a,rb],[c,rb],[g,rb],[u,rb],[a],[c],[g],[u]]).
+
+
+model(L,A):-
+        scfg(b,free,L-[],A-[]).
+
+scfg(P,LHS,L0-L1,A0-A1):-
+        (
+        terminal(LHS)->
+        annot(LHS,W,A),
+	A0=[A|A1],
+	L0=[W|L1]
+        ;
+        msw(transition(LHS,P),RHS),
+        projection(LHS,RHS,L0-L1,A0-A1)
+        ).
+
+projection(_,[],L-L,A-A).
+
+projection(P,[RHS_head|RHS_tail],L0-L2,A0-A2):-
+        scfg(P,RHS_head,L0-L1,A0-A1),
+        projection(P,RHS_tail,L1-L2,A1-A2)
+        .
+
+terminal(a).
+terminal(c).
+terminal(g).
+terminal(u).
+terminal(al).
+terminal(cl).
+terminal(gl).
+terminal(ul).
+terminal(ar).
+terminal(cr).
+terminal(gr).
+terminal(ur).
+
+annot(a,a,':').
+annot(c,c,':').
+annot(g,g,':').
+annot(u,u,':').
+annot(al,a,'<').
+annot(cl,c,'<').
+annot(gl,g,'<').
+annot(ul,u,'<').
+annot(ar,a,'>').
+annot(cr,c,'>').
+annot(gr,g,'>').
+annot(ur,u,'>').
+
+
+
+
+
+
+
+
+

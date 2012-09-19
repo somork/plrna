@@ -1,0 +1,84 @@
+
+
+# decoding experiments:
+go to rnahmm/ and follow directions in the README file 
+go to mmrnahmm/ and follow directions in the README file 
+go to mmrnahmm2/ and follow directions in the README file 
+go to rnascfg/ and follow directions in the README file 
+go to mmrnascfg/ and follow directions in the README file 
+go to rnafold/ and follow directions in the README file 
+ 
+when finished with the decoding do:
+
+# from ../decode/rnahmm do:
+../../scripts/get_decode.sh rnahmm
+../../scripts/get_names.sh rnahmm
+
+# from ../decode/mmrnahmm do:
+../../scripts/get_decode.sh mmrnahmm
+../../scripts/get_names.sh mmrnahmm
+
+# from ../decode/mmrnahmm2 do:
+../../scripts/get_decode.sh mmrnahmm2
+../../scripts/get_names.sh mmrnahmm2
+
+# from ../../scripts/rnafold do:
+../../scripts/get_decode.sh rnafold
+../../scripts/get_names.sh rnafold
+
+# from ../decoded/rnascfg
+../../scripts/parsescfg.sh 
+
+# from ../decoded/mmrnascfg
+../../scripts/parsemmscfg.sh [TODO fix]
+
+%%%%%%%
+
+#from ../decs/rnascfg do
+../../scripts/get_decode.sh rnascfg
+../../scripts/get_names.sh rnascfg
+#from ../decs/mmrnascfg do
+../../scripts/get_decode.sh mmrnascfg
+../../scripts/get_names.sh mmrnascfg
+
+
+%%%%%%%%%%%%%%%%%%
+
+#from ../tabs/rnahmm do:
+../../scripts/pre_performance.sh rnahmm
+#from ../tabs/mmrnahmm do:
+../../scripts/pre_performance.sh mmrnahmm
+#from ../tabs/mmrnahmm2 do:
+../../scripts/pre_performance.sh mmrnahmm2
+
+#from ../tabs/mmrnahmm2 do:
+../../scripts/rnafold_pre_performance.sh rnafold
+
+#from ../tabs/rnascfg do:
+../../scripts/scfg_pre_performance.sh rnascfg
+#from ../tabs/mmrnascfg do:
+../../scripts/scfg_pre_performance.sh mmrnascfg
+
+
+%%%%%%%%%%%%%%% 
+
+
+#from ../scripts do:
+./performance.sh rnahmm
+#from ../scripts do:
+./performance.sh mmrnahmm
+#from ../scripts do:
+./performance.sh mmrnahmm2
+#from ../scripts do:
+./performance.sh rnafold
+
+
+#######
+# to get learn_statistics table do:
+
+../scripts/learn_table.sh > ../tables/learn_table.table
+
+#####
+cd ../complexity [follow directions in README file there]
+
+

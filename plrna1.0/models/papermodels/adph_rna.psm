@@ -1,0 +1,64 @@
+% adph_rna.psm
+
+% parameters: 
+values(t(begin),[unpaired(5)]). 
+values(t(5),[push]). 
+values(t(push),[unpaired(loop)]). 
+values(t(loop),[pull]). 
+values(t(pullout),[unpaired(3)]). 
+values(t(pull),[pull]). 
+values(t(3),[end]). 
+values(e(unpaired),[’.’]). 
+values(e(push),[(’<’,’>’)]). 
+values(adph,[s,g]).
+
+% initiation: 
+model(Obs):-
+	msw(t(begin),NS), 
+	r(NS,adph(1),[],Obs).
+
+% termination: 
+r(end,_,_,[]).
+
+% recursions: 
+r(unpaired(X),adph(S),Stack,[W | R]):-
+	msw(e(unpaired),W), 
+	msw(adph,SG), 
+	adph(S,SG,A), 
+	r(unpaired(X),A,Stack,R).
+
+r(unpaired(X),next,Stack,[W | R]):- 
+	msw(e(unpaired),W), 
+	msw(t(X),NS), 
+	r(NS,adph(1),Stack,R).
+
+r(push,adph(S),Tail,[Left | R]):- 
+	msw(e(push),(Left,Right)), 
+	msw(adph,SG), 
+	adph(S,SG,A), 
+	r(push,A,[Right|Tail],R).
+
+r(push,next,Tail,[Left | R]):- 
+	msw(e(push),(Left,Right)), 
+	msw(t(push),NS), 
+	r(NS,adph(1),[Right|Tail],R).
+
+r(pull,A,[],R):- 
+	msw(t(pullout),NS), 
+	r(NS,A,[],R).
+
+r(pull,A,Stack,[Head | R]):- 
+	get_stack(Stack,Head,Tail), 
+	msw(t(pull),NS), 
+	r(NS,A,Tail,R).
+
+get_stack([Head | Tail],Head,Tail).
+
+adph(1,s,adph(1)). 
+adph(1,g,adph(2)). 
+adph(2,s,adph(2)). 
+adph(2,g,adph(3)). 
+adph(3,s,adph(3)). 
+adph(3,g,next).
+
+

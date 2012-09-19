@@ -1,0 +1,86 @@
+% pseudoknot.psm
+% S/ren M/rk
+% 2012-03-15
+
+% Transition probabilities:
+values(t(begin),[unpaired(5)]).
+values(t(unpaired),[push(1),unpaired(5)]).
+values(t(push(1)),[loop(1),push(1)]).
+values(t(loop(1)),[pseudo,loop(1)]).
+values(t(pseudo),[loop(2),pseudo]).
+values(t(loop(2)),[pull,loop(2)]).
+values(t(pull),[pull]).
+values(t(unpaired,stay),[knot,unpaired(3)]).
+values(t(knot,stay),[knot]).
+values(t(knot,go),[loop(2)]).
+values(t(unpaired,go),[end,unpaired(3)]).
+
+% Emission probabilities:
+values(e(x),[a,c,g,t]).
+values(e(a),[t]).
+values(e(c),[g]).
+values(e(g),[c]).
+values(e(t),[a]).
+
+model(Seq,Dot_bracket):-
+	msw(t(begin),Next),
+	r(Next,[],[],Seq,Dot_bracket).
+
+r(unpaired(5),Stack,Knot,[W|R1],['.'|R2]):-
+	msw(e(x),W),
+        msw(t(unpaired),Next),
+	r(Next,Stack,Knot,R1,R2).
+
+r(unpaired(3),[],[],[W|R1],['.'|R2]):-
+	msw(e(x),W),
+        msw(t(unpaired,go),Next),
+	r(Next,[],[],R1,R2).
+
+r(unpaired(3),Stack,Knot,[W|R1],['.'|R2]):-
+	msw(e(x),W),
+        msw(t(unpaired,stay),Next),
+	r(Next,Stack,Knot,R1,R2).
+
+% 2 push
+r(push(I),Tail,Knot,[W|R1],['<'|R2]):-
+	msw(e(x),W),
+        msw(t(push(I)),Next),
+	r(Next,[W|Tail],Knot,R1,R2).
+
+% 3 loops
+r(loop(I),Stack,Knot,[W|R1],['.'|R2]):-
+	msw(e(x),W),
+        msw(t(loop(I)),Next),
+	r(Next,Stack,Knot,R1,R2).
+
+r(pseudo,Stack,Knot,[W|R1],['i'|R2]):-
+	msw(e(x),W),
+        msw(t(pseudo),Next),
+	r(Next,Stack,[W|Knot],R1,R2).
+
+r(pull,[],Knot,R1,R2):-
+        r(unpaired(3),[],Knot,R1,R2).
+
+r(pull,Stack,Knot,[W|R1],['>'|R2]):-
+	get_stack(Stack,Head,Tail),
+	msw(e(Head),W),
+        msw(t(pull),Next),
+	r(Next,Tail,Knot,R1,R2).
+
+r(knot,Stack,[],[W|R1],['.'|R2]):-
+	msw(e(x),W),
+        msw(t(knot,go),Next),
+	r(Next,Stack,[],R1,R2).
+
+r(knot,Stack,Knot,[W|R1],['j'|R2]):-
+	get_stack(Knot,Head,Tail),
+	msw(e(Head),W),
+        msw(t(knot,stay),Next),
+	r(Next,Stack,Tail,R1,R2).
+
+r(end,[],[],[],[]).
+
+get_stack([Head|Tail],Head,Tail).
+
+
+

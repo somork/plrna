@@ -1,0 +1,29 @@
+
+# run the following commands:
+
+
+(./train.sh mmrnascfg 1 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.1.lst | ./decode.sh mmrnascfg 1 &)
+
+(./train.sh mmrnascfg 2 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.2.lst | ./decode.sh mmrnascfg 2 &)
+
+(./train.sh mmrnascfg 3 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.3.lst | ./decode.sh mmrnascfg 3 &)
+
+(./train.sh mmrnascfg 4 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.4.lst | ./decode.sh mmrnascfg 4 &)
+
+(./train.sh mmrnascfg 5 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.5.lst | ./decode.sh mmrnascfg 5 &)
+(cat ../../random_seqs/random_seqs_all.lst | ./decode.sh mmrnascfg random &)
+
+
+go to ../../dedoded/mmrnascfg and do:
+../../scripts/parsemmscfg.sh [to tabs...]
+
+
+
+
+
+

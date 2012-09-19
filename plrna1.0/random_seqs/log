@@ -1,0 +1,12 @@
+
+# from ../scripts do:
+./get_random_seqs.sh
+
+# from here do:
+cat random_seqs_all.lst | python ../scripts/lst2tab.py > random_seq_all.tab
+
+# then do:
+
+python ../scripts/tab2fast.py random_seq_all.tab
+
+

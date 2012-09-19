@@ -1,0 +1,78 @@
+% mmrnahmm2.psm
+% rnahmm_full_lim_sg_bp_bif_ho2.psm
+% S/ren M/rk
+% 2012-09-06
+
+%  higher order version
+% with emissions on previous emissions...
+% with transitions on emission and previous emmission
+
+% i.e. stacking!
+
+% limited version of rnahmm_full.psm
+% with canonical bp only (and wobble)
+% with spelled out states for bulges and bifurcations
+% annotation version: both sequence and dot-bracket structure
+% for autoAnnot running
+
+% transition probs from lim:
+values(t(begin),[unpaired(single),push]).
+values(t(single,_),[unpaired(single),push,end]).
+values(t(push,_),[push,unpaired(lbulge),unpaired(loop),pull]).
+%values(t(pushout,_),[unpaired(loop),pull]).
+values(t(loop,_),[unpaired(loop),pull]).
+values(t(pull,_),[pull,unpaired(rbulge),unpaired(bifurcation)]).
+values(t(pullout),[unpaired(single),end]).
+
+values(t(lbulge,_),[unpaired(lbulge),push]).
+values(t(rbulge,_),[unpaired(rbulge),pull]).
+values(t(bifurcation,_),[unpaired(bifurcation),push]).
+
+% Emission probabilities:
+values(e(push,_),[(a,u),(c,g),(g,c),(u,a),(g,u),(u,g)]).
+
+values(e(_,_),[a,c,g,u]).
+
+data('../../data/rfam95.90.30.canon.50.tab.part.not.3.dat').
+
+model(Seq,--Dot_bracket):-
+	msw(t(begin),NS),
+	r(NS,b,[],Seq,--Dot_bracket).
+
+r(end,_,_,[],--[]).
+
+r(unpaired(X),P,Stack,[W|R1],--[':'|R2]):-
+	msw(e(unpaired,P),W),
+        can_empty_stack(Stack,R1),
+        msw(t(X,(P,W)),NS),
+	r(NS,W,Stack,R1,--R2).
+
+r(push,P,Tail,[W|R1],--['<'|R2]):-
+	msw(e(push,P),(W,S)),
+        can_empty_stack([S|Tail],R1),
+        msw(t(push,(P,(W,S))),NS),
+	r(NS,(W,S),[S|Tail],R1,--R2).
+
+r(pull,P,[],R1,--R2):-
+	msw(t(pullout),NS), 
+        r(NS,P,[],R1,--R2).
+
+r(pull,P,Stack,[Head|R1],--['>'|R2]):-
+	get_stack(Stack,Head,Tail),
+        msw(t(pull,(P,Head)),NS),
+	r(NS,Head,Tail,R1,--R2).
+
+get_stack([Head|Tail],Head,Tail).
+
+:- table(can_empty_stack/2).
+
+can_empty_stack([],_).
+
+can_empty_stack([X|Xs],[X|Ys]) :-
+        can_empty_stack(Xs,Ys).
+
+can_empty_stack([X|Xs],[Y|Ys]) :-
+        X \= Y,
+        can_empty_stack([X|Xs],Ys).
+
+

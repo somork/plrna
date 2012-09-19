@@ -1,0 +1,218 @@
+% mRNA_model.psm S/ren M/rk 090331
+
+target(model,1).
+
+prism_main([Sw_out_name]):-
+        learn,
+        parse_atom(Sw_out_name, Sw_out),
+        save_sw(Sw_out).
+
+prism_main([Sw_in_name, Decoding_set_name]):-
+	parse_atom(Sw_in_name, Sw_in),
+	restore_sw(Sw_in),
+	parse_atom(Decoding_set_name, Decoding_set),
+	prob_file(Decoding_set,Ps),
+	writeln(Ps).	
+
+prism_main([Sw_in_name, Decoding_set_name, hindsight]):-
+	parse_atom(Sw_in_name, Sw_in),
+	restore_sw(Sw_in),
+	parse_atom(Decoding_set_name, Decoding_set),
+	hindsight_file(Decoding_set,Ps),
+	writeln(Ps).	
+
+data('k12_genes_u_150.dat').
+ 
+prob_file(F,Ps):-
+        get_goals(F,Gs),
+        prob_gs(Gs,Ps).
+
+hindsight_file(F,Ps):-
+        get_goals(F,Gs),
+        hindsight_gs(Gs,Ps).
+ 
+get_goals(F,Gs):-
+	see(F),
+	read(First),
+	get_terms(First,Gs),
+	seen.
+
+get_terms(end_of_file,[]).
+get_terms(G, [G|Gs]):-
+	G \= end_of_file,
+	read(Next),
+	get_terms(Next,Gs).
+
+prob_gs([],[]).
+
+prob_gs([G|RGs],[P|RPs]):-
+        prob(G,P),
+        prob_gs(RGs,RPs).
+
+hindsight_gs([],[]).
+
+hindsight_gs([G|RGs],[P|RPs]):-
+        hindsight(G,P),
+        hindsight_gs(RGs,RPs).                   
+
+                       
+%:- set_prism_flag(scaling,log_exp).
+ 
+% Production rules:
+values(free, [
+        ['.'],
+        ['.',free],
+        ['.',free,'.',free],
+        ['.','<',stem,'>']
+        ]).
+
+values(stem, [
+        ['<',stem,'>'],
+        ['<',loop,'>']
+        ]).
+
+values(loop, [
+        ['.',loop],
+        ['.']
+        ]).
+
+values(transition(state(intergenic)), [state(intergenic),state(start1)]).
+values(transition(state(start1)), [state(start2)]).
+values(transition(state(start2)), [state(start3)]).
+values(transition(state(start3)), [state(codon1)]).
+values(transition(state(codon1)), [state(codon2)]).
+values(transition(state(codon2)), [state(codon3)]).
+values(transition(state(codon3)), [state(codon1),state(stop1)]).
+values(transition(state(stop1)), [state(stop2)]).
+values(transition(state(stop2)), [state(stop3)]).
+values(transition(state(stop3)), [state(intergenic)]).
+
+values(emission(state(intergenic),(_,_),'.'),[a,c,g,t]).
+values(emission(state(intergenic),(_,_),'>'),[a,c,g,t]).
+values(emission(state(intergenic),(_,_),'<'),[a,c,g,t]).
+values(emission(state(start1),(_,_),'.'),[a,g,t]).
+values(emission(state(start1),(_,_),'>'),[a,g,t]).
+values(emission(state(start1),(_,_),'<'),[a,g,t]).
+values(emission(state(start2),(_,_),'.'),[t]).
+values(emission(state(start2),(_,_),'>'),[t]).
+values(emission(state(start2),(_,_),'<'),[t]).
+values(emission(state(start3),(_,_),'.'),[g]).
+values(emission(state(start3),(_,_),'>'),[g]).
+values(emission(state(start3),(_,_),'<'),[g]).
+values(emission(state(codon1),(_,_),'.'),[a,c,g,t]).
+values(emission(state(codon1),(_,_),'>'),[a,c,g,t]).
+values(emission(state(codon1),(_,_),'<'),[a,c,g,t]).
+values(emission(state(codon2),(_,a),'.'),[a,c,g,t]).
+values(emission(state(codon2),(_,a),'>'),[a,c,g,t]).
+values(emission(state(codon2),(_,a),'<'),[a,c,g,t]).
+values(emission(state(codon2),(_,c),'.'),[a,c,g,t]).
+values(emission(state(codon2),(_,c),'>'),[a,c,g,t]).
+values(emission(state(codon2),(_,c),'<'),[a,c,g,t]).
+values(emission(state(codon2),(_,g),'.'),[a,c,g,t]).
+values(emission(state(codon2),(_,g),'>'),[a,c,g,t]).
+values(emission(state(codon2),(_,g),'<'),[a,c,g,t]).
+values(emission(state(codon2),(_,t),'.'),[a,c,g,t]).
+values(emission(state(codon2),(_,t),'>'),[a,c,g,t]).
+values(emission(state(codon2),(_,t),'<'),[a,c,g,t]).
+
+values(emission(state(codon3),(a,a),'.'),[a,c,g,t]).
+values(emission(state(codon3),(a,a),'>'),[a,c,g,t]).
+values(emission(state(codon3),(a,a),'<'),[a,c,g,t]).
+values(emission(state(codon3),(a,c),'.'),[a,c,g,t]).
+values(emission(state(codon3),(a,c),'>'),[a,c,g,t]).
+values(emission(state(codon3),(a,c),'<'),[a,c,g,t]).
+values(emission(state(codon3),(a,g),'.'),[a,c,g,t]).
+values(emission(state(codon3),(a,g),'>'),[a,c,g,t]).
+values(emission(state(codon3),(a,g),'<'),[a,c,g,t]).
+values(emission(state(codon3),(a,t),'.'),[a,c,g,t]).
+values(emission(state(codon3),(a,t),'>'),[a,c,g,t]).
+values(emission(state(codon3),(a,t),'<'),[a,c,g,t]).
+
+values(emission(state(codon3),(c,a),'.'),[a,c,g,t]).
+values(emission(state(codon3),(c,a),'>'),[a,c,g,t]).
+values(emission(state(codon3),(c,a),'<'),[a,c,g,t]).
+values(emission(state(codon3),(c,c),'.'),[a,c,g,t]).
+values(emission(state(codon3),(c,c),'>'),[a,c,g,t]).
+values(emission(state(codon3),(c,c),'<'),[a,c,g,t]).
+values(emission(state(codon3),(c,g),'.'),[a,c,g,t]).
+values(emission(state(codon3),(c,g),'>'),[a,c,g,t]).
+values(emission(state(codon3),(c,g),'<'),[a,c,g,t]).
+values(emission(state(codon3),(c,t),'.'),[a,c,g,t]).
+values(emission(state(codon3),(c,t),'>'),[a,c,g,t]).
+values(emission(state(codon3),(c,t),'<'),[a,c,g,t]).
+
+values(emission(state(codon3),(g,a),'.'),[a,c,g,t]).
+values(emission(state(codon3),(g,a),'>'),[a,c,g,t]).
+values(emission(state(codon3),(g,a),'<'),[a,c,g,t]).
+values(emission(state(codon3),(g,c),'.'),[a,c,g,t]).
+values(emission(state(codon3),(g,c),'>'),[a,c,g,t]).
+values(emission(state(codon3),(g,c),'<'),[a,c,g,t]).
+values(emission(state(codon3),(g,g),'.'),[a,c,g,t]).
+values(emission(state(codon3),(g,g),'>'),[a,c,g,t]).
+values(emission(state(codon3),(g,g),'<'),[a,c,g,t]).
+values(emission(state(codon3),(g,t),'.'),[a,c,g,t]).
+values(emission(state(codon3),(g,t),'>'),[a,c,g,t]).
+values(emission(state(codon3),(g,t),'<'),[a,c,g,t]).
+
+values(emission(state(codon3),(t,a),'.'),[a,c,g,t]).
+values(emission(state(codon3),(t,a),'>'),[a,c,g,t]).
+values(emission(state(codon3),(t,a),'<'),[a,c,g,t]).
+values(emission(state(codon3),(t,c),'.'),[a,c,g,t]).
+values(emission(state(codon3),(t,c),'>'),[a,c,g,t]).
+values(emission(state(codon3),(t,c),'<'),[a,c,g,t]).
+values(emission(state(codon3),(t,g),'.'),[a,c,g,t]).
+values(emission(state(codon3),(t,g),'>'),[a,c,g,t]).
+values(emission(state(codon3),(t,g),'<'),[a,c,g,t]).
+values(emission(state(codon3),(t,t),'.'),[a,c,g,t]).
+values(emission(state(codon3),(t,t),'>'),[a,c,g,t]).
+values(emission(state(codon3),(t,t),'<'),[a,c,g,t]).
+
+values(emission(state(stop1),(_,_),'.'),[t]).
+values(emission(state(stop1),(_,_),'>'),[t]).
+values(emission(state(stop1),(_,_),'<'),[t]).
+values(emission(state(stop2),(_,_),'.'),[a,g]).
+values(emission(state(stop2),(_,_),'>'),[a,g]).
+values(emission(state(stop2),(_,_),'<'),[a,g]).
+values(emission(state(stop3),(_,a),'.'),[a,g]).
+values(emission(state(stop3),(_,a),'>'),[a,g]).
+values(emission(state(stop3),(_,a),'<'),[a,g]).
+values(emission(state(stop3),(_,g),'.'),[a]).
+values(emission(state(stop3),(_,g),'>'),[a]).
+values(emission(state(stop3),(_,g),'<'),[a]).
+
+model(L):-
+        scfg_hmm(free, state(start1),(a,b), L-[]).
+
+scfg_hmm(LHS,State,(A,B),L0-L1):-
+        (
+        nonterminal(LHS) ->
+        msw(LHS,RHS),
+        projection(RHS,State,(A,B), L0-L1)
+        ;
+        L0=[LHS|L1]
+        ).
+
+projection([],_,_,L-L).
+
+projection([RHS_head|RHS_tail],State,(A,B),L0-L2):-
+        (
+        emittable(RHS_head)->
+        msw(emission(State,(A,B),RHS_head),Symbol),
+        msw(transition(State),Newstate),
+        scfg_hmm(Symbol,Newstate,(B,Symbol),L0-L1),
+        projection(RHS_tail,Newstate,(B,Symbol),L1-L2)
+        %.
+        ;
+        scfg_hmm(RHS_head,State,(A,B),L0-L1),
+        projection(RHS_tail,State,(A,B),L1-L2)
+        ).
+
+nonterminal(free).
+nonterminal(stem).
+nonterminal(loop).
+
+emittable('.').
+emittable('>').
+emittable('<').
+
+

@@ -1,0 +1,20 @@
+%SM_081020_scfg example
+
+target(model,1).
+
+values(nt, [
+        [a]
+        ]).
+
+model(L):- 
+        scfg(nt, L-[]).
+
+scfg(LHS, L0-L1):-
+        (nonterminal(LHS) -> msw(LHS,RHS),proj(RHS,L0-L1);
+        L0=[LHS|L1]).
+
+proj([],L-L).
+proj([X|Xs],L0-L2):-
+        scfg(X,L0-L1),proj(Xs,L1-L2).
+
+nonterminal(nt).

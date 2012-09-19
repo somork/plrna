@@ -1,0 +1,47 @@
+% mm_rna.psm
+% S/ren M/rk
+% 2012-03-16
+
+% Transition probabilities:
+values(t(begin,_),[unpaired(single)]).
+values(t(single,_),[unpaired(single),push,end]).
+values(t(push,_),[push,unpaired(loop)]).
+values(t(loop,_),[unpaired(loop),pull,push]).
+values(t(pull,_),[pull,unpaired(loop)]).
+
+% Emission probabilities:
+values(e(unpaired),[a,c,g,t]).
+values(e(push),[a,c,g,t]).
+values(e(a),[t]).
+values(e(c),[g]).
+values(e(g),[c]).
+values(e(t),[a]).
+
+model(Seq,Dot_bracket):-
+	msw(t(begin,s),NS),
+	r(NS,[],Seq,Dot_bracket).
+
+r(end,_,[],[]).
+
+r(unpaired(X),Stack,[W|R1],['.'|R2]):-
+	msw(e(unpaired),W),
+        msw(t(X,W),NS),
+	r(NS,Stack,R1,R2).
+
+r(push,Tail,[W|R1],['<'|R2]):-
+	msw(e(push),W),
+        msw(t(push,W),NS),
+	r(NS,[W|Tail],R1,R2).
+
+r(pull,[],R1,R2):-
+        r(unpaired(single),[],R1,R2).
+
+r(pull,Stack,[W|R1],['>'|R2]):-
+	get_stack(Stack,Head,Tail),
+	msw(e(Head),W),
+        msw(t(pull,W),NS),
+	r(NS,Tail,R1,R2).
+
+get_stack([Head|Tail],Head,Tail).
+
+

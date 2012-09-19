@@ -1,0 +1,68 @@
+#!/usr/bin/perl -sw
+
+# Add counter after the first time the name is seen
+my $uniq_name = 0;
+if (defined $un) {$uniq_name = 1;}
+$un = "";
+
+# Pretty names can be used as filenames
+my $pretty = 0;
+if (defined $pn) {$pretty = 1;}
+$pn = "";
+
+my $noteddy = 0;
+if (defined $e) {$noteddy = 1;}
+$e = "";
+
+use strict;
+use lib '/home/users/hull/perllib';
+use Jhh::Formats;
+
+my %names;
+my $gap = "-";
+while (<>) {
+
+	if (/^# STOCKHOLM 1\.0/i) {
+		my @seqs;
+		my @names;
+		my %id;
+		my $comment;
+
+		Formats::readStockholm(\@names, \@seqs, \%id, \$comment);
+		
+		my $struc = $id{'SS_cons'};
+		if ($noteddy) {$struc =~ tr/></)(/;}
+		else {$struc =~ tr/></()/;}
+		
+		for(my $i = 0; $i<=$#names; $i++) {
+			$seqs[$i] =~ s/\./$gap/g;
+			if ($uniq_name) {checkName(\$names[$i], \%names);}
+			if ($pretty) {prettyName(\$names[$i]);}
+			print "$names[$i]\t$seqs[$i]\t$struc";
+			if (defined $id{'ID'}) {print "\t$id{'ID'}";}
+			if (defined $id{'SS'}) {print "\t$id{'SS'}";}
+			print "\n";
+		}
+	}
+}
+
+sub checkName {
+
+	my ($name, $names, $pretty) = @_;
+
+	if (defined $$names{$$name}) {
+		$$names{$$name}++;
+		$$name .= ".$$names{$$name}";
+	}
+	else {$$names{$$name} = 0;}
+	
+}
+
+sub prettyName {
+
+	my ($name) = @_;
+
+	# Remove nasty characters from the file name
+	$$name =~ s/[^\w\.\-]/_/g;
+}
+	

@@ -1,0 +1,51 @@
+%SM_081014_1.0_pair_scfg example
+
+target(model,2).
+
+:- set_prism_flag(scaling,log_exp).
+
+values(begin1, [[match1]]).
+values(begin2, [[match2]]).
+
+values((match1,match2),
+	[
+		[ a, (match1,match2), t],
+		[ c, (match1,match2), g],
+		[ g, (match1,match2), c],
+		[ t, (match1,match2), a],
+	        [a,(match1,match2)],
+                [c,(match1,match2)],
+                [g,(match1,match2)],
+                [t,(match1,match2)],
+                [a],
+                [c],
+                [g],
+                [t]
+	        ]).
+
+model(L):- Scfg(begin1,begin2, L-[]).
+
+scfg(LHS1,LHS2,, L0-L1):-
+	nonterminal(LHS1,LHS2)-> 
+        msw(LHS1,LHS2,,RHS1,RHS2),
+        projection(RHS1,RHS2,L0-L1).
+
+
+scfg(terminal(X)), L0-L1):-
+        L0=[X|L1].
+      
+projection([],[],L-L).
+
+projection([H1|T1],[H2|T2], L0-L1):-
+	scfg(H1,H2, L0-L2),
+        projection(T1,T2, L2-L1).
+
+nonterminal(begin1).
+nonterminal(begin2).
+nonterminal(match1).
+nonterminal(match2).
+nonterminal(match1,match2).
+terminal(a).
+terminal(c).
+terminal(g).
+terminal(t).

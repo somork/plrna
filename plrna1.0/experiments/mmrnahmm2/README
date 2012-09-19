@@ -1,0 +1,24 @@
+
+
+RNAhmm experiments:
+
+(./train.sh mmrnahmm2 1 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.1.lst | ./decode.sh mmrnahmm2 1 &)
+
+(./train.sh mmrnahmm2 2 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.2.lst | ./decode.sh mmrnahmm2 2 &)
+
+(./train.sh mmrnahmm2 3 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.3.lst | ./decode.sh mmrnahmm2 3 &)
+
+(./train.sh mmrnahmm2 4 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.4.lst | ./decode.sh mmrnahmm2 4 &)
+
+(./train.sh mmrnahmm2 5 &)
+(cat ../../data/rfam95.90.30.canon.50.tab.part.5.lst | ./decode.sh mmrnahmm2 5 &)
+
+
+(cat ../../random_seqs/random_seqs_all.lst | ./decode.sh rnahmm random &)
+
+
+

@@ -1,0 +1,114 @@
+%SM_081014_1.0_pair_scfg example
+
+target(model,2).
+
+:- set_prism_flag(scaling,log_exp).
+
+values(begin, [[match],[x_state],[y_state]]).
+
+values(match,
+	[
+		[ m(a,a), match, m(t,t)],
+		[ m(c,c), match, m(g,g)],
+		[ m(g,g), match, m(c,c)],
+		[ m(t,t), match, m(a,a)],
+	        [m(a,a),match],
+                [m(c,c),match],
+                [m(g,g),match],
+                [m(t,t),match],
+                [x_state],
+                %[m(a,a),x_state],
+                %[m(a,a),x_state],
+                %[m(a,a),x_state],
+                %[m(a,a),y_state],
+                %[m(a,a),y_state],
+                %[m(a,a),y_state],
+                [y_state],
+                [m(a,a)],
+                [m(c,c)],
+                [m(g,g)],
+                [m(t,t)]
+	        ]).
+
+values(x_state,
+	[
+		[ x(a), x_state, x(t)],
+		[ x(c), x_state, x(g)],
+		[ x(g), x_state, x(c)],
+		[ x(t), x_state, x(a)],
+		[x(a),x_state],
+                [x(c),x_state],
+                [x(g),x_state],
+                [x(t),x_state],                
+	        [x(a),match],
+                [x(c),match],
+                [x(g),match],
+                [x(t),match],                
+	        [x(a)],
+                [x(c)],
+                [x(g)],
+                [x(t)]                
+        	]).
+
+values(y_state,
+	[
+		[ y(a), y_state, y(t)],
+		[ y(c), y_state, y(g)],
+		[ y(g), y_state, y(c)],
+		[ y(t), y_state, y(a)],
+	        [y(a),y_state],
+                [y(c),y_state],
+                [y(g),y_state],
+                [y(t),y_state],
+        	[y(a),match],
+                [y(c),match],
+                [y(g),match],
+                [y(t),match],
+        	[y(a)],
+                [y(c)],
+                [y(g)],
+                [y(t)]                
+	        ]).
+
+model(L1,L2):- scfg(begin, L1-[], L2-[]).
+
+scfg(LHS, L10-L11, L20-L21):-
+	nonterminal(LHS)-> 
+        msw(LHS,RHS),
+        projection(RHS,L10-L11, L20-L21).
+
+scfg(m(X,Y), L10-L11,L20-L21):-
+        L10=[X|L11],
+        L20=[Y|L21].
+
+scfg(x(X), L10-L11,L20-L21):-
+        L10=[X|L11],
+        L20=L12.
+ 
+scfg(y(Y), L10-L11,L20-L21):-
+        L10=L11,
+        L20=[Y|L21].
+     
+projection([],L1-L1, L2-L2).
+
+projection([H|T], L10-L11, L20-L21):-
+	scfg(H, L10-L12, L20-L22),
+        projection(T, L12-L11, L22-L21).
+
+nonterminal(begin).
+nonterminal(match).
+nonterminal(x_state).
+nonterminal(y_state).
+terminal(m(a,a)).
+terminal(m(c,c)).
+terminal(m(g,g)).
+terminal(m(t,t)).
+terminal(x(a)).
+terminal(x(c)).
+terminal(x(g)).
+terminal(x(t)).
+terminal(y(a)).
+terminal(y(c)).
+terminal(y(g)).
+terminal(y(t)).
+

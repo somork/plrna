@@ -1,0 +1,16 @@
+
+## make sure RNAfold2.0.0 is installed on your system
+
+(./decode.sh rnafold 1 &)
+(./decode.sh rnafold 2 &)
+(./decode.sh rnafold 3 &)
+(./decode.sh rnafold 4 &)
+(./decode.sh rnafold 5 &)
+
+
+(./decode_complexity.sh rnafold random &)
+
+
+
+
+

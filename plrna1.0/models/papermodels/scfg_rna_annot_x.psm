@@ -1,0 +1,119 @@
+% scfg_rna_annot_x.psm 
+% S/ren M/rk 
+% full rna scfg model...
+
+% for autoannotations ... incompletely implemented...
+
+:-['default'].
+%data('test_annot.dat').
+%data('../data/rfam95.90.30.lim.len.100.clean.tab.part.1.dat').
+data('../data/rfam95.90.30.lim.len.500.clean.max.25.tab.part.1.dat').
+
+% parameters: 
+%values(transition(begin),[[free],[stem]]).
+values(transition(free),[[a,free],[c,free],[g,free],[u,free],[free,free],[stem],[a],[c],[g],[u]]).
+values(transition(stem),[
+			[al,stem,ur],
+			[cl,stem,gr],
+			[gl,stem,cr],
+			[ul,stem,ar],
+			[gl,stem,ur],
+			[ul,stem,gr],
+			[stem,stem],		
+			[al,ur],
+			[cl,gr],	
+			[gl,cr],
+			[ul,ar],
+			[gl,ur],
+			[ul,gr],
+
+			%[al,stem,stem,ur],
+			%[cl,stem,stem,gr],
+			%[gl,stem,stem,cr],
+			%[ul,stem,stem,ar],
+			%[gl,stem,stem,ur],
+			%[ul,stem,stem,gr],
+			
+			[al,stem,rb,ur],
+			[cl,stem,rb,gr],
+			[gl,stem,rb,cr],
+			[ul,stem,rb,ar],
+			[gl,stem,rb,ur],
+			[ul,stem,rb,gr],
+			
+			[al,lb,stem,ur],	
+			[cl,lb,stem,gr],	
+			[gl,lb,stem,cr],	
+			[ul,lb,stem,ar],	
+			[gl,lb,stem,ur],	
+			[ul,lb,stem,gr],	
+
+			[loop]
+			%[al,loop,ur],
+			%[ul,loop,ar],
+			%[cl,loop,gr],
+			%[gl,loop,cr],
+			%[ul,loop,gr],
+			%[gl,loop,ur]
+			]).
+
+values(transition(loop),[[a,loop],[c,loop],[g,loop],[u,loop],[loop,stem,loop],[a],[c],[g],[u]]).
+values(transition(lb),[[a,lb],[c,lb],[g,lb],[u,lb],[a],[c],[g],[u]]).
+values(transition(rb),[[a,rb],[c,rb],[g,rb],[u,rb],[a],[c],[g],[u]]).
+
+
+model(L,A):-
+        scfg(free,L-[],A-[]).
+
+scfg(LHS,L0-L1,A0-A1):-
+        (
+        terminal(LHS)->
+        annot(LHS,W,A),
+	A0=[A|A1],
+	L0=[W|L1]
+        ;
+        msw(transition(LHS),RHS),
+        projection(RHS,L0-L1,A0-A1)
+        ).
+
+projection([],L-L,A-A).
+
+projection([RHS_head|RHS_tail],L0-L2,A0-A2):-
+        scfg(RHS_head,L0-L1,A0-A1),
+        projection(RHS_tail,L1-L2,A1-A2)
+        .
+
+terminal(a).
+terminal(c).
+terminal(g).
+terminal(u).
+terminal(al).
+terminal(cl).
+terminal(gl).
+terminal(ul).
+terminal(ar).
+terminal(cr).
+terminal(gr).
+terminal(ur).
+
+annot(a,a,':').
+annot(c,c,':').
+annot(g,g,':').
+annot(u,u,':').
+annot(al,a,'<').
+annot(cl,c,'<').
+annot(gl,g,'<').
+annot(ul,u,'<').
+annot(ar,a,'>').
+annot(cr,c,'>').
+annot(gr,g,'>').
+annot(ur,u,'>').
+
+
+
+
+
+
+
+
+

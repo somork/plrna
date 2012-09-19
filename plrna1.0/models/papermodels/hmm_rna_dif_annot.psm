@@ -1,0 +1,36 @@
+
+values(t(_),[s(1),s(2),s(3),end]).
+
+values(e(p),[(a,u),(c,g),(g,c),(u,a),(u,g),(g,u)]).
+values(e(s),[a,c,g,u]).
+
+model(S,A):-
+	msw(t(b),NS),
+	r(NS,S-[],A-[]).
+
+r(end,S-S,A-A).
+
+r(s(1),[W1|L0]-L1,['<'|A0]-A1):-
+	msw(t(1),NS),
+	msw(e(p),(W1,W2)),
+	L2=[W2|L1],
+	A2=['>'|A1],
+	r(NS,L0-L2,A0-A2).
+
+r(s(2),[W|L0]-L1,[':'|A0]-A1):-
+	msw(t(2),NS),
+	msw(e(s),W),
+	r(NS,L0-L1,A0-A1).
+
+r(s(3),L0-L1,A0-A1):-
+	msw(t(3),NS),
+	msw(e(s),W),
+	L2=[W|L1],
+	A2=[':'|A1],
+	r(NS,L0-L2,A0-A2).
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+#!/usr/bin/perl -sw
+
+my $noncanon = 0;
+if (defined $nc) {$noncanon = $nc;}
+$nc="";
+
+my $keepGaps = 0;
+if (defined $kg) {$keepGaps = 1;}
+$kg="";
+
+use strict;
+use Structures;
+
+my $rmlet = "q";
+my $gap = "-";
+my $open = "(";
+my $close = ")";
+my $single = ".";
+#my $gap = "\\.";
+
+while (<>) {
+
+	chomp;
+	my ($name, $seq, $struc, $comm) = split(/\s+/, $_, 4);
+	
+	if ($seq eq "-1") {
+		warn "Sequence $name has no sequence. It was passed through without any cleaning\n";
+		print; print "\n";
+		next;
+	}
+	
+	unless (defined $comm) {$comm = "";}
+	
+	&Structures::cleantab(\$seq, \$struc, $gap, $open, $close, $single, $noncanon, $keepGaps);
+	
+	print "$name\t$seq\t$struc\t$comm\n";
+	
+}

@@ -1,0 +1,12 @@
+average values:
+fam	#members	ppv	sens	mcc	sqrt(sens*ppv)
+IRE	33	0.755	0.746	0.745	0.75
+JUMPstart	43	0.53	0.308	0.398	0.403
+Prion\_pknot	80	0.046	0.023	0.024	0.033
+mini-ykkC	50	0.828	0.807	0.814	0.816
+Histone3	48	0.896	0.694	0.777	0.779
+SAM-SAH	46	0.931	0.778	0.847	0.849
+Acido-Lenti-1	55	0.907	0.907	0.905	0.907
+glnA	61	0.764	0.709	0.732	0.734
+PK-IAV	32	0.031	0.013	0.014	0.02
+total	448	0.632	0.554	0.584	0.588

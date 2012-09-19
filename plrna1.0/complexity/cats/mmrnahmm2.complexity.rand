@@ -1,0 +1,1150 @@
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,g,g,u,c,u,u,a,g,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.01
+	Percent of CPU this job got: 72%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 56448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3428
+	Voluntary context switches: 82
+	Involuntary context switches: 21
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,u,u,c,c,u,u,g,c,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 70%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 57104
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2959
+	Voluntary context switches: 65
+	Involuntary context switches: 11
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,u,a,c,a,u,a,c,u,a,u,c,a,u,u,a,g,g,a,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.06
+	System time (seconds): 0.00
+	Percent of CPU this job got: 77%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 80320
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3947
+	Voluntary context switches: 64
+	Involuntary context switches: 13
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,g,u,u,c,u,g,c,c,g,a,g,u,u,c,c,c,u,a,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.06
+	System time (seconds): 0.01
+	Percent of CPU this job got: 78%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 76128
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3681
+	Voluntary context switches: 65
+	Involuntary context switches: 13
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,a,g,a,g,g,c,g,a,c,c,u,a,u,u,g,u,c,u,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.05
+	System time (seconds): 0.00
+	Percent of CPU this job got: 77%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 65760
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4009
+	Voluntary context switches: 64
+	Involuntary context switches: 14
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,a,a,u,g,g,u,c,a,c,c,g,c,a,u,u,u,g,g,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.05
+	System time (seconds): 0.00
+	Percent of CPU this job got: 79%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 80112
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3885
+	Voluntary context switches: 64
+	Involuntary context switches: 15
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,g,u,a,a,a,g,c,c,u,c,u,c,g,a,u,c,c,u,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.05
+	System time (seconds): 0.01
+	Percent of CPU this job got: 77%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 64848
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3956
+	Voluntary context switches: 64
+	Involuntary context switches: 17
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,u,a,g,c,a,g,c,u,u,a,g,a,a,c,a,c,u,a,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.08
+	System time (seconds): 0.00
+	Percent of CPU this job got: 78%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 91072
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4059
+	Voluntary context switches: 65
+	Involuntary context switches: 18
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,g,u,u,c,c,a,c,g,u,g,a,u,g,a,a,a,c,u,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.10
+	System time (seconds): 0.01
+	Percent of CPU this job got: 84%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 79408
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3889
+	Voluntary context switches: 65
+	Involuntary context switches: 18
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,a,u,a,u,a,a,u,c,a,u,u,c,g,u,u,c,g,u,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.08
+	System time (seconds): 0.01
+	Percent of CPU this job got: 81%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 90576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4075
+	Voluntary context switches: 67
+	Involuntary context switches: 23
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,g,u,a,u,u,u,c,c,a,a,u,u,a,u,c,u,g,u,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.08
+	System time (seconds): 0.01
+	Percent of CPU this job got: 82%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 84320
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4147
+	Voluntary context switches: 65
+	Involuntary context switches: 19
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,g,g,c,a,c,a,c,g,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 73%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 55312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3357
+	Voluntary context switches: 65
+	Involuntary context switches: 16
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,a,a,u,a,a,u,a,c,c,a,c,u,a,u,u,g,u,g,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.07
+	System time (seconds): 0.01
+	Percent of CPU this job got: 80%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 76368
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3650
+	Voluntary context switches: 66
+	Involuntary context switches: 16
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,u,u,c,g,a,a,u,g,g,c,a,g,c,c,c,u,g,a,u,c,g,g,a,a,u,c,a,u,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.50
+	System time (seconds): 0.03
+	Percent of CPU this job got: 92%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 336480
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 12336
+	Voluntary context switches: 65
+	Involuntary context switches: 67
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,u,a,g,a,g,c,a,g,c,u,c,a,g,g,g,c,c,c,u,g,c,a,a,u,g,g,g,c,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.42
+	System time (seconds): 0.04
+	Percent of CPU this job got: 95%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 300112
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11599
+	Voluntary context switches: 69
+	Involuntary context switches: 59
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,c,u,a,a,a,g,u,u,g,a,a,c,c,c,u,c,u,a,c,g,u,c,g,u,a,c,c,g,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.46
+	System time (seconds): 0.04
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 313776
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11429
+	Voluntary context switches: 64
+	Involuntary context switches: 57
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,c,c,g,u,c,c,a,g,a,a,c,c,a,g,g,u,a,u,g,u,u,c,c,g,u,g,a,a,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.26
+	System time (seconds): 0.02
+	Percent of CPU this job got: 93%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 181632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7352
+	Voluntary context switches: 69
+	Involuntary context switches: 39
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,a,u,g,u,u,u,c,c,a,a,a,g,c,g,c,u,g,g,u,a,g,a,u,g,g,u,g,u,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.37
+	System time (seconds): 0.03
+	Percent of CPU this job got: 95%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 337760
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 12931
+	Voluntary context switches: 65
+	Involuntary context switches: 49
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,g,g,a,g,u,g,c,a,g,g,g,u,a,g,a,a,g,a,g,a,c,c,g,g,u,a,g,c,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.21
+	System time (seconds): 0.02
+	Percent of CPU this job got: 91%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 166736
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 6418
+	Voluntary context switches: 65
+	Involuntary context switches: 33
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,a,g,a,a,a,g,u,c,a,u,c,g,u,a,c,a,c,c,g,c,a,u,u,g,c,a,u,u,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.23
+	System time (seconds): 0.02
+	Percent of CPU this job got: 90%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 198224
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7366
+	Voluntary context switches: 68
+	Involuntary context switches: 40
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,u,u,c,u,g,u,a,g,u,c,g,u,a,a,c,a,g,g,g,a,c,g,u,a,u,u,a,c,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.38
+	System time (seconds): 0.03
+	Percent of CPU this job got: 95%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.44
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 409776
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 13854
+	Voluntary context switches: 64
+	Involuntary context switches: 56
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,a,u,c,a,a,c,c,g,a,g,g,c,g,u,u,u,u,u,g,c,u,c,g,u,g,u,g,g,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.23
+	System time (seconds): 0.01
+	Percent of CPU this job got: 92%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 225280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8963
+	Voluntary context switches: 65
+	Involuntary context switches: 38
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,a,c,g,g,c,g,g,a,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.05
+	System time (seconds): 0.00
+	Percent of CPU this job got: 74%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 55280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2843
+	Voluntary context switches: 66
+	Involuntary context switches: 18
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,u,g,u,a,u,g,g,a,g,c,a,g,g,u,c,u,g,c,c,a,a,c,u,g,g,g,c,a,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.61
+	System time (seconds): 0.05
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 598512
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 18726
+	Voluntary context switches: 69
+	Involuntary context switches: 84
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,a,c,a,g,a,a,g,a,a,g,u,c,c,c,g,a,u,g,u,u,u,c,a,u,a,c,a,a,c,c,g,u,g,g,u,g,a,u,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 1.12
+	System time (seconds): 0.08
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1127936
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 34951
+	Voluntary context switches: 65
+	Involuntary context switches: 128
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,u,g,a,u,g,g,g,g,u,g,g,u,g,u,u,a,a,u,c,a,c,g,g,a,a,a,g,g,c,a,c,g,c,c,c,u,u,a,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 3.46
+	System time (seconds): 0.21
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3254896
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 84264
+	Voluntary context switches: 69
+	Involuntary context switches: 382
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,a,a,a,c,c,g,u,u,c,a,a,u,u,a,g,g,u,c,a,a,g,g,c,g,u,g,a,u,u,u,g,g,u,u,u,c,g,c,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 2.87
+	System time (seconds): 0.19
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2535008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 65846
+	Voluntary context switches: 69
+	Involuntary context switches: 330
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,u,u,c,u,u,g,a,a,c,c,u,u,c,g,u,a,u,c,a,c,u,g,a,c,c,c,u,c,a,c,u,a,a,u,a,u,u,a,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.91
+	System time (seconds): 0.08
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 896832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 27153
+	Voluntary context switches: 71
+	Involuntary context switches: 112
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,a,u,u,g,g,u,a,a,a,g,u,u,c,a,u,g,u,g,a,a,c,c,a,a,g,u,g,u,g,u,c,a,c,a,c,g,g,a,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 4.66
+	System time (seconds): 0.29
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.99
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4238336
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 97733
+	Voluntary context switches: 69
+	Involuntary context switches: 517
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,g,c,a,g,g,g,a,u,g,a,u,u,g,g,c,g,c,g,u,g,c,c,g,g,c,a,u,a,g,c,a,c,u,c,g,a,a,u,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 8.98
+	System time (seconds): 0.57
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8275584
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 196249
+	Voluntary context switches: 69
+	Involuntary context switches: 979
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,c,a,a,u,g,c,g,g,u,u,c,g,a,g,g,a,a,g,c,g,c,c,g,u,c,g,a,a,a,u,u,g,g,c,a,u,c,a,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 3.42
+	System time (seconds): 0.22
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3234944
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 86085
+	Voluntary context switches: 68
+	Involuntary context switches: 383
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,c,a,g,a,c,c,g,c,g,g,g,g,c,a,a,c,u,a,a,g,g,u,u,c,g,g,a,c,c,g,c,g,a,c,a,u,u,u,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.99
+	System time (seconds): 0.07
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 962672
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 28199
+	Voluntary context switches: 76
+	Involuntary context switches: 119
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,a,u,a,g,g,a,a,g,a,a,c,u,u,u,c,g,g,u,a,a,g,g,a,a,c,u,c,c,a,c,g,c,g,c,u,a,g,u,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 1.74
+	System time (seconds): 0.13
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1640592
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 45203
+	Voluntary context switches: 69
+	Involuntary context switches: 204
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,a,c,c,a,c,a,g,a,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 67%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 61024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3202
+	Voluntary context switches: 66
+	Involuntary context switches: 24
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,u,g,u,a,g,a,a,g,c,u,u,a,g,a,u,u,u,u,g,a,g,u,g,a,c,g,g,a,c,a,g,g,c,u,g,a,a,g,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 8.25
+	System time (seconds): 0.52
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.82
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6956704
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 164923
+	Voluntary context switches: 69
+	Involuntary context switches: 898
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,c,u,a,g,u,a,c,g,a,c,g,g,a,a,c,g,g,g,u,a,c,c,c,u,u,g,c,c,u,c,u,c,c,c,c,g,u,u,g,a,c,a,u,u,g,u,c,u,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 78.16
+	System time (seconds): 4.63
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:23.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 67915344
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1508904
+	Voluntary context switches: 72
+	Involuntary context switches: 8417
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,u,a,g,a,g,u,u,a,u,u,g,c,u,c,g,c,a,u,c,u,g,u,a,c,a,g,g,g,c,g,u,g,c,a,u,c,u,c,u,c,c,a,g,a,c,u,g,g,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 92.42
+	System time (seconds): 11.38
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:44.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82222752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1893720
+	Voluntary context switches: 77
+	Involuntary context switches: 10535
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,g,a,u,g,c,c,a,g,g,u,g,a,c,c,u,a,u,g,a,g,u,a,c,u,g,c,a,g,u,g,a,c,c,a,a,g,u,c,c,a,a,g,g,g,u,c,u,g,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 111.72
+	System time (seconds): 7.17
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:59.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 100606624
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2334297
+	Voluntary context switches: 132
+	Involuntary context switches: 12069
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,a,c,c,c,a,c,a,u,u,c,u,g,u,c,g,c,g,u,a,u,a,u,c,g,c,u,a,u,g,u,u,u,a,g,c,g,u,g,g,a,c,c,a,c,g,u,a,g,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 38.48
+	System time (seconds): 2.61
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:41.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 35862320
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 844038
+	Voluntary context switches: 69
+	Involuntary context switches: 4178
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,a,u,g,c,a,g,g,c,a,a,g,c,a,c,g,c,u,u,u,c,c,a,g,a,c,c,g,u,c,c,u,c,c,u,a,u,g,u,u,g,g,a,a,g,a,a,g,u,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 12.32
+	System time (seconds): 0.86
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11924096
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 268428
+	Voluntary context switches: 81
+	Involuntary context switches: 1346
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,c,u,c,g,g,a,a,a,a,c,c,c,c,g,a,c,u,g,a,g,a,a,c,a,a,u,g,u,u,c,g,u,c,c,u,c,u,c,u,u,c,g,g,g,c,a,g,u,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 8.89
+	System time (seconds): 0.64
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8586784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 200371
+	Voluntary context switches: 69
+	Involuntary context switches: 977
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,a,g,g,c,a,g,c,g,a,g,a,g,a,a,g,g,g,a,a,u,g,c,u,g,g,u,u,a,a,a,u,u,g,g,u,c,c,c,a,u,u,c,u,c,u,a,u,g,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 8.59
+	System time (seconds): 0.59
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8112080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 192676
+	Voluntary context switches: 69
+	Involuntary context switches: 944
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,g,g,c,c,g,c,g,c,c,u,g,u,g,c,u,u,c,g,u,a,g,g,u,g,c,g,g,c,c,c,u,c,a,u,g,a,a,c,u,g,u,c,g,g,c,g,u,u,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 213.79
+	System time (seconds): 62.54
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:38.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 177648128
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4031047
+	Voluntary context switches: 70
+	Involuntary context switches: 28209
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[u,a,u,g,c,g,g,u,g,u,a,c,a,g,g,a,c,c,a,c,c,u,c,g,c,u,u,g,a,a,g,u,g,g,g,c,g,g,a,a,a,g,g,g,c,u,a,c,a,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 28.38
+	System time (seconds): 1.83
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26259152
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 585216
+	Voluntary context switches: 81
+	Involuntary context switches: 3084
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,g,u,g,a,u,g,c,g,u],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.05
+	System time (seconds): 0.01
+	Percent of CPU this job got: 74%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 58144
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3023
+	Voluntary context switches: 65
+	Involuntary context switches: 14
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,a,c,c,g,a,c,g,c,u,g,c,a,a,a,c,g,a,a,g,u,c,a,g,a,a,c,a,u,c,u,c,u,a,a,a,u,a,g,g,a,a,a,u,a,g,c,c,c,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 3.50
+	System time (seconds): 0.24
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3140480
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 78648
+	Voluntary context switches: 70
+	Involuntary context switches: 398
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,c,g,c,u,g,c,c,a,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 72%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 68640
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2658
+	Voluntary context switches: 68
+	Involuntary context switches: 14
+	Swaps: 0
+	File system inputs: 48
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[g,g,u,a,u,g,g,c,c,g],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 70%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 57664
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2992
+	Voluntary context switches: 65
+	Involuntary context switches: 12
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[c,a,a,g,u,c,g,u,a,a],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.04
+	System time (seconds): 0.00
+	Percent of CPU this job got: 71%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 53904
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2760
+	Voluntary context switches: 65
+	Involuntary context switches: 11
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g [autoAnnotations],prismAnnot(mmrnahmm2),restore_sw,S=[a,u,a,u,a,c,a,a,a,c],viterbiAnnot(model(S,DotBracket),P),writeln(S),writeln(DotBracket),halt"
+	User time (seconds): 0.03
+	System time (seconds): 0.01
+	Percent of CPU this job got: 70%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 47776
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3396
+	Voluntary context switches: 65
+	Involuntary context switches: 12
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

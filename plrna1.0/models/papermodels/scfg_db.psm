@@ -1,0 +1,42 @@
+% scfg_db.psm 
+% S/ren M/rk 
+% full rna scfg model...
+% only dot-bracket notation
+
+% parameters:
+values(transition(free),[[':',free],[stem],[free,free],[':']]).
+values(transition(stem),[
+			['<',stem,'>'],
+			['<',stem,rb,'>'],
+			['<',lb,stem,'>'],	
+			[loop]
+			]).
+
+values(transition(loop),[[':'],[':',loop],[loop,stem,loop]]).
+values(transition(lb),[[':',lb],[':']]).
+values(transition(rb),[[':',rb],[':']]).
+
+model(L):-
+	scfg(free,L-[]).
+
+scfg(LHS,L0-L1):-
+        (
+        terminal(LHS)->
+        L0=[LHS|L1]
+        ;
+        msw(transition(LHS),RHS),
+        projection(RHS,L0-L1)
+        ).
+
+projection([],L-L).
+
+projection([RHS_head|RHS_tail],L0-L2):-
+        scfg(RHS_head,L0-L1),
+        projection(RHS_tail,L1-L2).
+ 
+terminal(':').
+terminal('>').
+terminal('<').
+
+
+

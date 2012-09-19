@@ -1,0 +1,50 @@
+
+
+
+cat ../raw_data/rfam95.90.30.lim.len.50.clean.tab.part.not.1 | python tab2prolog2.py > ../data/rfam95.90.30.lim.len.50.clean.tab.part.not.1.dat 
+
+cat ../raw_data/rfam95.90.30.lim.len.50.clean.tab.part.1 | python tab2lst.py > ../data/rfam95.90.30.lim.len.50.clean.tab.part.1.lst
+
+
+# go to ../decode/decode_part1/ and do:
+cat * > ../tabs/tmp
+../../scripts/names.sh > ../tabs/tmp.names
+
+### then do [from here]:
+cat ../decoded/tabs/rnahmm.dec | python dec2tab2.py ../decoded/tabs/rnahmm.names > ../decoded/tabs/rnahmm.tab
+
+
+
+### then on to mcc etc...
+#golden_10 is first 10 raw_data/rfam95.90.30.lim.len.50.clean.tab.part.1 
+# tmp_10 is 10 fist ../decoded/tabs/tmp.tab
+
+cat tmp_10 | python namepred.py golden_10 > tmp_8
+
+./structureCC -f=tmp_8 golden_10
+
+##### get predictions from scfg (without autoannot)
+cat ../../rnahmm/scfg/scfg_r_x_rfam_500_clean_max25_test.vitf | python parsescfg.py > tmp
+
+cat ../experiments_scfg/scfg_rna_x_part1.tab.mcc | python mcc_av.py > tmp
+
+cat ../experiments_scfg/scfg_rna_x_part1.tab.mcc | python mcc_av_clust.py > tmp
+
+
+##########
+###########
+# family dependent x-val partitioning:
+
+python tab2xval_fam_stats.py ../raw_data/rfam95.90.30.canon.50.tab 5 > ../stats/rfam95.90.30.canon.50.tab.fam 
+python tab2xval_fam_stats.py ../raw_data/rfam95.90.30.canon.100.tab 5 > ../stats/rfam95.90.30.canon.100.tab.fam 
+python tab2xval_fam_stats.py ../raw_data/rfam95.90.30.canon.500.tab 5 > ../stats/rfam95.90.30.canon.500.tab.fam 
+python tab2xval_fam_stats.py ../raw_data/rfam95.90.30.canon.5000.tab 5 > ../stats/rfam95.90.30.canon.5000.tab.fam 
+
+
+python tab2xval_fam.py ../raw_data/rfam95.90.30.canon.50.tab 5 > tmp
+
+#test:	
+python tab2xval_fam_stats.py ../raw_data/rfam95.90.30.canon.50.tab.part.1
+
+
+

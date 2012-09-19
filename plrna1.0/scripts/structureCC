@@ -1,0 +1,284 @@
+#!/usr/bin/perl -sw
+
+
+# This script compares global predicted structures to annotated structures.
+
+# The first file is the annotation file (tab format) the rest of the files 
+# are prediction files.
+
+unless (defined $f ) {die "An annotation file must be given using option -f=<name>\n";}
+unless (-r $f) {die "Cannot read the annotation file: $f\n$!";}
+my $annofile = $f;
+
+# By default slide base pairs are allowed
+my $slide = 0;
+if (defined $no_slide) {$slide = 0;}
+$no_slide = "";
+if (defined $use_slide) {$slide = 1;}
+$use_slide = "";
+
+use strict;
+
+my $bp_open = "(";
+my $bp_close = ")";
+my $gap = "-";
+my $singel = ".";
+#my $nostruc = "-";
+
+# Read the correct annotation from a file
+my %annotation;
+&readfile($annofile, \%annotation, $bp_open, $bp_close, $gap, $singel);
+
+while(<>) {
+
+	chomp;
+	
+	my ($name, $dna, $pred, $comm) = split(/\s+/, $_, 4);
+	
+	unless (defined $annotation{$name}) {
+		warn "Prediction without annotation fould: $name\n";
+		next;
+	}
+		
+	unless (defined $comm) {$comm = "";}
+
+	if ($dna eq "-1") {
+#print "$dna\n$pred\n$annotation{$name}\n";
+		warn "Empty prediction found for sequence: $name\n";
+		my $len = keys %{$annotation{$name}};
+		$pred = $singel x $len; # Make an empty prediction
+		$dna = "A" x $len; # Make a dummy sequence
+#next;
+	}
+
+	my %prediction;
+	
+	&parsestruc($dna, $pred, \%prediction, $gap, $bp_open, $bp_close, $singel);
+
+	&compare($name, \%prediction, \%{$annotation{$name}}, $comm, $slide);
+	
+}
+
+###########################################################################
+
+sub readfile {
+
+	my ($fname, $struc, $bp_open, $bp_close, $gap, $single) = @_;
+	
+	open(IN, $fname);
+	
+	while (<IN>) {
+	
+		my ($name, $dna, $anno, $comm) = split(/\s+/, $_, 4);
+		
+		# Just a check
+		if (defined $$struc{$name}) {warn "The annotation names are not uniq! $name is already known. Output for this name cannot be trusted.\n";}
+
+		&parsestruc($dna, $anno, \%{$$struc{$name}}, $gap, $bp_open, $bp_close, $single);
+
+	}
+
+	close IN;
+}
+
+
+sub compare{
+
+	#################################################
+	#                                               #
+	# Compare a global prediction to an annotation. #
+	#                                               #
+	#################################################
+
+	my ($name, $pred, $anno, $comm, $slide) = @_;
+
+	my ($tp, $fp, $fn, $tn);
+	$tp = $fp = $fn = $tn = 0;
+		
+	# Foreach pair of positions in the prediction / annotation
+	# A true positive is a pair which is basepaired in both prediction and
+	# annotation (slide rule may be used)
+	# A false positive is a pair predicted to basepair but not annotationed.
+	# A false negative is pair annotated to basepair but not predicted.
+	# A true negative is a pair which is neither annotated nor predicted to
+	# basepair
+
+
+	my @pos = sort num keys %{$anno};
+	my $length = $pos[-1];
+	
+	foreach my $left (@pos) {	
+
+		unless (defined $$pred{$left}) {
+			warn "The position $left for sequence $name does not have a prediction. Predictions must be global.\n";
+			return;
+		}
+
+
+		# Hopefully every downstream position is a true negative.
+		$tn += $length - $left;
+
+		if ($$pred{$left} > $left) {
+		
+			# Predicted to basepair downstream
+			
+			# One of the hopefully true negatives is a positive (true or false)
+			$tn--;
+			
+		 	if (&truePos($left, $pred, $anno, $slide)) {
+				# True positive
+				$tp++;
+			}
+			else {
+				# The base pair is a false positive
+				$fp++;
+
+				if ($$anno{$left} > $left) {
+					# This position is annotated to be base paired downstream and
+					# it is therefore a false negative.
+					$fn++;
+
+					# The position with which this position should base pair is not
+					# a correct true negative.
+					$tn--;
+				}
+				# if the position is annotated as unpaired then $fn and tn is correct
+				# if the position is annotated as base paired upstream then the fn
+				# and tn were already corrected when the left side of the base pair
+				# was encountered.
+			}
+		}
+		elsif ($$anno{$left} > $left) {
+			# Annotation pairs downstream
+
+			# The base pair is missing and is therefore a false negative
+			$fn++;
+
+			# One of the hopefully true negatives is not a true negative
+			$tn--;
+		}
+								
+	}
+
+	my $ppv = 0;
+	if (($tp+$fp) != 0) {$ppv = ($tp/($tp+$fp));}
+	my $sens = 0;
+	if (($tp+$fn) != 0) {$sens = ($tp/($tp+$fn));}
+	
+	my $dom = ($tp + $fp)*($tp + $fn)*($tn + $fp)*($tn + $fn);
+	my $cc = 0;
+	if ($dom > 0) {$cc=($tp*$tn - $fp*$fn)/sqrt($dom);}
+	
+
+	printf "$tp $fp $fn $tn %1.3f %1.3f $name %1.3f %1.3f $comm\n", $ppv, $sens, $cc, sqrt($sens*$ppv);
+}	
+
+sub truePos {
+
+	###############################################################
+	#                                                             #
+	# Returns true if a base pair is both predicted and annotated #
+	#                                                             #
+	###############################################################
+
+	my ($pos, $pred, $anno, $slide) = @_;
+	
+	if ($$pred{$pos} == $$anno{$pos}) {
+		# This is a normally annotated and predicted base pair
+		return 1;
+	}
+	elsif ($slide and $$anno{$pos} > 0 and
+	   ((defined $$pred{$pos -1} and $$pred{$pos -1} == $$anno{$pos}) or
+		 (defined $$pred{$pos +1} and $$pred{$pos +1} == $$anno{$pos}) or
+		 ($$pred{$pos} -1) == $$anno{$pos} or
+		 ($$pred{$pos} +1) == $$anno{$pos})) {
+		# The slide base pairs
+		return 1;
+	}
+
+	# Not true positive base pair
+	return 0;
+}
+
+sub num {$a <=> $b;}
+
+
+sub parsestruc {
+	###################################
+	# Parse the basepairing structure #
+	###################################
+
+	my ($seq, $anno, $data, $gap, $open, $close, $singel) = @_; # The annotation and the structure
+
+	my $len = length($seq);
+	my $begin = 1; # No local structures
+	my $end = $len;
+	my @lager;   # A stack
+	my $n;
+	my $countbp=0;
+
+	# Erase any old structure
+	undef(%$data);
+
+	for(my $i=$begin-1; $i<$end; $i++) {
+		$n=$i+1;
+
+		if (substr($anno,$i,1) eq $open) {
+
+			# This is the left side of a base pair
+
+			if (substr($seq, $i,1) eq $gap) {
+				# Gaps can not base pair
+				$$data{$n} = -1;
+			}
+			# If its the left part of a basepair put it in the stack
+			push(@lager, $n); 
+		}
+		elsif (substr($anno,$i,1) eq $close) {
+
+			# This is the right side of a base pair
+
+			# The left side of a basepair
+			my $start;
+			
+			if ($#lager < 0) {print STDERR "Could not parse stack. Underflow error\n";$start = 0;}
+			else {
+				# Get the left side from the stack
+				$start = pop(@lager);
+			}
+			
+			if ((defined $$data{$start}) and ($$data{$start} == -1)) {
+				# The left side of the base pair is a gap. This position is not base
+				# paired.
+				$$data{$n} = -1;
+			}
+			else {
+				if (substr($seq, $i,1) eq $gap) {
+					# This position is a gap.
+					$$data{$n} = -1;
+					# The left side of the base pair no longer base pairs.
+					$$data{$start} = -1;
+				}
+				else {
+					# Put the complementary positions into the structure
+					$$data{$start} = $n;
+					$$data{$n} = $start;
+					$countbp++;
+				}
+			}
+		}
+		else {
+			# No basepairing
+			if (substr($anno, $i, 1) eq $singel) {
+				$$data{$n} = -1;
+			}
+			else {
+				warn "Im not sure this point should ever be reached\n";
+			}
+		}
+	}
+	if ($#lager != -1) {print STDERR "Could not parse stack. $#lager elements left in the stack\n";}
+	while (my $start = pop(@lager)) {$$data{$start} = -2; warn "The base pair stack is not empty\n";}
+	return $countbp;
+}
+

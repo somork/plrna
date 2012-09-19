@@ -1,0 +1,11 @@
+
+# run the following commands:
+
+zcat /home/projects/rfamclean/Rfam.10.1/data/Rfam.seed.rr95.90.30.gz | ./stk2tab -e | ./cleantab > ../raw_data/rfam95.90.30.tab
+
+(./setup.sh &) [this will overwrite the partitions used in the paper!]
+
+(./get_xval_data.sh &)
+
+cd ../data [view README there]
+

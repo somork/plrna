@@ -1,0 +1,26 @@
+
+*** Error: getline(): not interactive, use stdio.
+Command exited with non-zero status 1
+	Command being timed: "/home/users/soer/prism/21/bin/prism -g prism(rnascfg),restore_sw,S=[g,u,u,c,u,g,u,c,a,c,a,a,c,g,g,c,u,u,c,c,u,g,g,c,g,u,g,a,c,a,g,g,u,u,u,u,u,c,a,u,a,u,c,g,g,a,g,c,a],viterbif(model(S))."
+	User time (seconds): 0.48
+	System time (seconds): 0.03
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 308448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11353
+	Voluntary context switches: 44
+	Involuntary context switches: 63
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 128
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

@@ -1,0 +1,90 @@
+% kissing_hairpins.psm
+% S/ren M/rk
+% 2012-03-14
+
+% Transition probabilities:
+values(t(begin),[unpaired(5)]).
+values(t(unpaired),[push(1),unpaired(5)]).
+values(t(push(1)),[loop(1),push(1)]).
+values(t(loop(1)),[kissing,loop(1)]).
+values(t(kissing),[loop(2),kissing]).
+values(t(loop(2)),[pull,loop(2)]).
+values(t(pull),[pull]).
+values(t(pullout),[unpaired(3)]).
+values(t(unpaired,stay),[push(2),unpaired(3)]).
+values(t(push(2)),[loop(3),push(2)]).
+values(t(loop(3)),[kissed,loop(3)]).
+values(t(kissed,stay),[kissed]).
+values(t(kissed,go),[loop(2)]).
+values(t(unpaired,go),[end,unpaired(3)]).
+
+% Emission probabilities:
+values(e(x),[a,c,g,t]).
+values(e(a),[t]).
+values(e(c),[g]).
+values(e(g),[c]).
+values(e(t),[a]).
+
+model(Dot_bracket,Seq):-
+	msw(t(begin),Next),
+	r(Next,[],[],Dot_bracket,Seq).
+
+r(unpaired(5),Stack,Kiss,['.'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(unpaired),Next),
+	r(Next,Stack,Kiss,R1,R2).
+
+r(unpaired(3),[],[],['.'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(unpaired,go),Next),
+	r(Next,[],[],R1,R2).
+
+r(unpaired(3),Stack,Kiss,['.'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(unpaired,stay),Next),
+	r(Next,Stack,Kiss,R1,R2).
+
+% 2 push
+r(push(I),Tail,Kiss,['<'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(push(I)),Next),
+	r(Next,[W|Tail],Kiss,R1,R2).
+
+% 3 loops
+r(loop(I),Stack,Kiss,['.'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(loop(I)),Next),
+	r(Next,Stack,Kiss,R1,R2).
+
+r(kissing,Stack,Kiss,['i'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(kissing),Next),
+	r(Next,Stack,[W|Kiss],R1,R2).
+
+r(pull,[],Kiss,R1,R2):-
+        msw(t(pullout),Next),
+        r(Next,[],Kiss,R1,R2).
+
+r(pull,Stack,Kiss,['>'|R1],[W|R2]):-
+	get_stack(Stack,Head,Tail),
+	msw(e(Head),W),
+        msw(t(pull),Next),
+	r(Next,Tail,Kiss,R1,R2).
+
+r(kissed,Stack,[],['.'|R1],[W|R2]):-
+	msw(e(x),W),
+        msw(t(kissed,go),Next),
+	r(Next,Stack,[],R1,R2).
+
+r(kissed,Stack,Kiss,['j'|R1],[W|R2]):-
+	get_stack(Kiss,Head,Tail),
+	msw(e(Head),W),
+        msw(t(kissed,stay),Next),
+	r(Next,Stack,Tail,R1,R2).
+
+r(end,[],[],[],[]).
+
+get_stack([Head|Tail],Head,Tail).
+
+
+

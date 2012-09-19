@@ -1,0 +1,6 @@
+
+
+
+cat mmrnahmm.canon.50.3.dec | python dec2tab.py mmrnahmm.canon.50.3.names > tmp
+
+

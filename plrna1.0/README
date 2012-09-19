@@ -1,0 +1,43 @@
+
+This is the README file for the plrna1.0 project described in the paper on probabilistic logic models for RNA bioinformatics by Mork, Theil-Have and Hull Haugaard
+
+
+This directory contains the following subdirectories:
+
+models [contains PRISM model files (.psm) for the experiments and from the paper]
+scripts [shell scripts and python scripts and perl scripts needed for the experiments]
+raw_data [contains the rfam data for the experiments and files generated subsequently]
+data [files for training, and decoding]
+random_seqs [files for training and decoding]
+experiments [subdirectories for experiments for each model]
+decoded [results of experiments]
+complexity [complexity files from experiments]
+decs [temporary files derived from the scfg experimenst]
+tabs [files in tab format for prediction performance evaluation]
+stats [results]
+tables [results]
+
+Depending on the capabilities of the computer you are working on you might consider running experiments of the different models in parallel (e.g. training rnahmm and mmrnahmm simultaneously on the same partition), however the decoding of each partition depends on a generically named Saved_SW file so the partitions must be analyzed sequentially.
+
+The experiments were done using PRISM2.1 wich is available for download at:
+http://sato-www.cs.titech.ac.jp/prism/
+
+and with RNAfold.2.0.0 wich is availabe for download (as part of the Vienna RNA package) at:
+http://www.tbi.univie.ac.at/~ivo/RNA/
+
+
+%%%%%%%%%
+
+For (re)doing the experiments please go: 
+
+to the raw_data directory and follow the instructions in the README file
+to the data directory and follow the instructions in the README file
+to the experiments directory and follow the instructions in the README file
+to the complexity directory and follow the instructions in the README file
+
+when completed just cat the table files and insert in paper and export stats files for plotting (R). 
+
+good luck!
+
+
+

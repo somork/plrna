@@ -1,0 +1,13 @@
+
+../data/random_seqs.cat
+../data/fasta_seqs.cat
+
+cats/rnafold.complexity
+
+cats/rnahmm.complexity.rand
+
+
+cat ../complexity/cats/rnahmm.complexity.rand | python complexity_table.py ../data/random_seqs.cat
+
+
+
